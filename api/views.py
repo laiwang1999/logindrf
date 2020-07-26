@@ -7,10 +7,10 @@ from .serializers import UserModelSerializer, CarModelSerializer
 
 
 class Test(MyModelViewSet):
-    queryset = models.User.objects.all()
+    queryset = models.User.objects.filter(is_delete=False)
     serializer_class = UserModelSerializer
 
 
 class Car(MyModelViewSet):
-    queryset = models.Car.objects.all()
+    queryset = models.Car.objects.filter(is_delete=False)
     serializer_class = CarModelSerializer

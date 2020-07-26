@@ -34,3 +34,6 @@ class Car(Base):
         db_table = 'api_car'
         verbose_name = '汽车'
         verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
