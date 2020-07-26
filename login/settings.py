@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -124,6 +124,8 @@ USE_TZ = False
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# 自定义用户表
+AUTH_USER_MODEL = 'api.User'
 
 REST_FRAMEWORK = {
     # 全局配置异常模块
@@ -136,7 +138,7 @@ REST_FRAMEWORK = {
     ],
     # 权限类配置
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.AllowAny'
     ],
     # 频率类配置
     'DEFAULT_THROTTLE_CLASSES': [],
